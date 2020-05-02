@@ -78,7 +78,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #1a1919; }
+  background: #ffffff; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -1219,6 +1219,9 @@ input[type="radio"] + label:before {
   .image img {
     border-radius: 0.375em;
     display: block; }
+  .image.preview {
+    width: 100px;
+  }
   .image.left, .image.right {
     max-width: 40%; }
     .image.left img, .image.right img {

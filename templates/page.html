@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alexander Dovnar (Systems Engineer (SRE|DevOps)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Alexander Dovnar (Systems Engineer (SRE|DevOps)</strong></a>
+									<ul class="icons">
+                                        {% for link in social -%}
+										<li><a href="{{ link.link }}" class="icon brands {{ link.style }}><span class="label">{{ link.name | title }}</span></a></li>
+                                        {%- endfor %}
+									</ul>
+                                </header>
+                            <!-- Content -->
+                            <section>
+                                {% for item in content -%}
+                                {% set type = item.style|default(item) %}
+                                {% if type == "box" -%}
+                                <div class="box">
+                                    <p>{{ item.text }}</p>
+                                </div>
+                                {% elif type == "code" %}
+                                <pre><code>{{ item.text }}</code></pre>
+                                {% elif type == "blog" %}
+                                <div class="posts">
+                                    <article>
+                                        <a href="{{ item.name }}.html" class="image"><img src="{{ item.image }}" alt="" /></a>
+                                        <h4>{{ item.name }}</h4>
+                                        <p>{{ item.intro }}</p>
+                                        <ul class="actions">
+                                            <li><a href="{{ item.name }}.html" class="button">Read</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                {% else %}
+                                <{{ item.style}}>{{ item.text | default("") }}</{{item.style }}>
+                                {% endif %}
+                                {%- endfor %}
+                            </section>
+						</div>
+					</div>
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+                                        {%- for item in menu %}
+                                        {%- if item.page is defined %}
+										<li><a href="{{ item.page }}">{{ item.name | title }}</a></li>
+                                        {%- elif item.pages is defined and item.pages | length > 0 %}
+										<li>
+											<span class="opener">{{ item.name | title }}</span>
+											<ul>
+                                                {% for page in item.pages -%}
+												<li><a href="{{ page.page }}">{{ page.name | title }}</a></li>
+                                                {%- endfor %}
+											</ul>
+										</li>
+                                        {% endif -%}
+                                        {% endfor -%}
+									</ul>
+								</nav>
+							<!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <p>I'd be really happy to get in touch with you via any of the channels below.</p>
+                                <ul class="contact">
+                                    <li class="icon brands solid fa-telegram"><a href="tg://resolve?domain=AliaksandrDounar" target="_blank">@AliaksandrDounar</a></li>
+                                    <li class="icon brands solid fa-github"><a href="https://github.com/DovnarAlexander" target="_blank">DovnarAlexander</a></li>
+                                </ul>
+                            </section>
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Alexander Dovnar personal site. All rights reserved. Site design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+						</div>
+					</div>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
