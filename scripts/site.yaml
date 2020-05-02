@@ -1,0 +1,52 @@
+---
+social:
+  - name: 'GitHub'
+    link: 'https://github.com/DovnarAlexander'
+    style: 'fa-github'
+menu:
+  - name: 'About me'
+    page: 'index.html'
+  - name: 'Curriculum Vitae (CV/Resume)'
+    page: 'cv.html'
+  - name: 'Projects'
+    pages:
+      - name: 'Project'
+        page: 'project1.html'
+  - name: 'Blog'
+    page: 'blog.html'
+pages:
+  - name: 'index.html'
+    content:
+      - style: 'h2'
+        text: 'Who am I?'
+      - style: 'p'
+        text: 'Съешь еще этих пышных булочек, Lorem ipsul.'
+      - style: 'delimiter'
+      - style: 'h3'
+        text: 'Somebody said'
+      - style: 'blockquote'
+        text: 'Съешь еще этих пышных булочек, Lorem ipsul.'
+  - name: 'cv.html'
+    content:
+      - style: 'h3'
+        text: 'CV'
+      - style: 'box'
+        text: 'I am the superman'
+  - name: 'project1.html'
+    content:
+      - style: 'h3'
+        text: 'hello world'
+      - style: 'code'
+        text: |
+          echo "hello world"
+          ping tut.by
+  - name: 'blog.html'
+    content:
+      - name: 'Ansible for dummies'
+        style: 'blog'
+        image: 'https://storage.googleapis.com/stateless-d2c-io/2018/02/2018-02-23_19h30_17.png'
+        intro: 'Let it be a some article about ansible'
+      - name: 'Terraform for dummies'
+        style: 'blog'
+        image: 'https://www.datocms-assets.com/2885/1518044148-terraform_verticallogo_fullcolor.png'
+        intro: 'Let it be a some article about terraform'

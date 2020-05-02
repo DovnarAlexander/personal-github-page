@@ -21,27 +21,16 @@
 								<header id="header">
 									<a href="index.html" class="logo"><strong>Alexander Dovnar (Systems Engineer (SRE|DevOps)</strong></a>
 									<ul class="icons">
-                                        <li><a href="https://github.com/DovnarAlexander" class="icon brands fa-github><span class="label">Github</span></a></li>
+                                        {% for link in social -%}
+										<li><a href="{{ link.link }}" class="icon brands {{ link.style }}><span class="label">{{ link.name | title }}</span></a></li>
+                                        {%- endfor %}
 									</ul>
                                 </header>
                             <!-- Content -->
                             <section>
-                                
-                                
-                                <h2>Who am I?</h2>
-                                
-                                
-                                <p>Съешь еще этих пышных булочек, Lorem ipsul.</p>
-                                
-                                
-                                <delimiter></delimiter>
-                                
-                                
-                                <h3>Somebody said</h3>
-                                
-                                
-                                <blockquote>Съешь еще этих пышных булочек, Lorem ipsul.</blockquote>
-                                
+								<h3>{{ header }}</h3>
+								<img src="{{ image }}" alt="" />
+								<p>{{ text }}</p>
                             </section>
 						</div>
 					</div>
@@ -54,16 +43,21 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">About Me</a></li>
-										<li><a href="cv.html">Curriculum Vitae (Cv/resume)</a></li>
+                                        {%- for item in menu %}
+                                        {%- if item.page is defined %}
+										<li><a href="{{ item.page }}">{{ item.name | title }}</a></li>
+                                        {%- elif item.pages is defined and item.pages | length > 0 %}
 										<li>
-											<span class="opener">Projects</span>
+											<span class="opener">{{ item.name | title }}</span>
 											<ul>
-                                                <li><a href="project1.html">Project</a></li>
+                                                {% for page in item.pages -%}
+												<li><a href="{{ page.page }}">{{ page.name | title }}</a></li>
+                                                {%- endfor %}
 											</ul>
 										</li>
-                                        
-										<li><a href="blog.html">Blog</a></li></ul>
+                                        {% endif -%}
+                                        {% endfor -%}
+									</ul>
 								</nav>
 							<!-- Section -->
                             <section>
