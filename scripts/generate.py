@@ -18,20 +18,6 @@ for page in data['pages']:
     f.write(
       templateEnv.get_template('page.html').render(
         data,
-        content=page['content']
+        name=page['name'], content=page['content']
       )
     )
-# Generate blog pages
-for page in data['pages']:
-  for content in page['content']:
-    if content['style'] == 'blog':
-      with open('{0}/../{1}.html'.format(cwd, content['name']), 'w') as f:
-        with open('{0}/../blog/{1}.html'.format(cwd, content['name']), 'r') as blog:
-          f.write(
-            templateEnv.get_template('blog.html').render(
-              data,
-              header=content['name'],
-              image=content['image'],
-              text="\n".join([line.rstrip() for line in blog])
-            )
-          )
