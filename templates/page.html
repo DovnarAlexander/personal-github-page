@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Alexander Dovnar (Systems Engineer (SRE|DevOps)</title>
+		<title>Alexander Dovnar - Systems Engineer (SRE|DevOps)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,12 +22,84 @@
 									<a href="index.html" class="logo"><strong>Alexander Dovnar (Systems Engineer (SRE|DevOps)</strong></a>
 									<ul class="icons">
                                         {% for link in social -%}
-										<li><a href="{{ link.link }}" class="icon brands {{ link.style }}><span class="label">{{ link.name | title }}</span></a></li>
+										<li><a href="{{ link.link }}" class="icon {{ link.style }}"><span class="label">&nbsp;{{ link.name | title }}</span></a></li>
                                         {%- endfor %}
 									</ul>
                                 </header>
                             <!-- Content -->
                             <section>
+								{% if name == "blog.html" -%}
+								<!-- Based on https://medium.com/retainable/how-to-embed-medium-on-your-website-the-easy-way-41ac0a13231e -->
+								<!-- TODO: Add my feed after the first publication -->
+                                <div id="retainable-rss-embed" 
+								data-rss="https://medium.com/feed/retainable"
+								data-maxcols="3" 
+								data-layout="grid" 
+								data-poststyle="inline" 
+								data-readmore="Read" 
+								data-buttonclass="btn btn-primary" 
+								data-offset="-100"></div>
+								{%- elif name == "cv.html" -%}
+								<div class="row gtr-200">
+									<div class="col-3 col-12-medium">
+										<span class="image">
+											<img src="{{ content.photo }}" alt="" />
+										</span>
+									</div>
+									<div class="col-4 col-12-medium">
+										<h4>Personal & Professional Informations</h4>
+										{% for p in content.personal_info -%}
+										<p>{{ p }}</p>
+										{%- endfor %}
+									</div>
+									<div class="col-5 col-12-medium">
+										<h4>Contacts</h4>
+										<ul>
+											{% for li in content.contacts -%}
+											<li>{%- if li.link is defined -%}<a href="mailto:dovnar.alexander@gmail.com">{%- endif -%}{{ li.text | default(li) }}{%- if li.link is defined -%}</a>{%- endif -%}</li>
+											{%- endfor %}
+										</ul>
+									</div>
+								</div>
+								<hr class="major" />
+								<h3>Working experience</h3>
+								{%- for div in content.experience %}
+								<div class="row">
+									<div class="col-9 col-12-medium">
+										<h4>{{ div.company }}</h5>
+									</div>
+									<h4>{{ div.term }}</h5>
+								</div>
+								<div class="box">
+									<ul>
+										{%- for li in div.highlights %}
+										<li>{{ li }}</li>
+										{% endfor -%}
+									</ul>
+									<b>
+										<ul class="icons">
+											{%- for li in div.tags %}
+											<li>{{ li }}</li>
+											{% endfor -%}
+										</ul>
+									</b>
+								</div>
+								{% endfor -%}
+								<hr class="major" />
+								<h3>Education</h3>
+								<ul>
+									{% for li in content.education -%}
+									<li><b>{{ li.term }}</b>> {{ li.name }}</li>
+									{%- endfor %}
+								</ul>
+								<hr class="major" />
+								<h3>Certificates &amp; Courses</h3>
+								<ul>
+									{% for li in content.certificates -%}
+									<li><b>{{ li.term }}</b>> {{ li.name }}{%- if li.link is defined -%} - <a href="#">Link</a>{%- endif -%}</li>
+									{%- endfor %}
+								</ul>
+								{% else %}
                                 {% for item in content -%}
                                 {% set type = item.style|default(item) %}
                                 {% if type == "box" -%}
@@ -51,6 +123,7 @@
                                 <{{ item.style}}>{{ item.text | default("") }}</{{item.style }}>
                                 {% endif %}
                                 {%- endfor %}
+								{% endif %}
                             </section>
 						</div>
 					</div>
@@ -86,8 +159,8 @@
                                 </header>
                                 <p>I'd be really happy to get in touch with you via any of the channels below.</p>
                                 <ul class="contact">
-                                    <li class="icon brands solid fa-telegram"><a href="tg://resolve?domain=AliaksandrDounar" target="_blank">@AliaksandrDounar</a></li>
-                                    <li class="icon brands solid fa-github"><a href="https://github.com/DovnarAlexander" target="_blank">DovnarAlexander</a></li>
+                                    <li class="icon brands solid fa-telegram"><a href="tg://resolve?domain=AliaksandrDounar">@AliaksandrDounar</a></li>
+                                    <li class="icon brands solid fa-github"><a href="https://github.com/DovnarAlexander">DovnarAlexander</a></li>
                                 </ul>
                             </section>
 							<!-- Footer -->
@@ -103,5 +176,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			{% if name == "blog.html" %}
+			<script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
+			{% endif %}
 	</body>
 </html>
