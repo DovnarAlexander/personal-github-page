@@ -56,7 +56,7 @@
 										<h4>Contacts</h4>
 										<ul>
 											{% for li in content.contacts -%}
-											<li>{%- if li.link is defined -%}<a href="mailto:dovnar.alexander@gmail.com">{%- endif -%}{{ li.text | default(li) }}{%- if li.link is defined -%}</a>{%- endif -%}</li>
+											<li>{%- if li.link is defined -%}<a href="{{ li.link }}">{%- endif -%}{{ li.text | default(li) }}{%- if li.link is defined -%}</a>{%- endif -%}</li>
 											{%- endfor %}
 										</ul>
 									</div>
