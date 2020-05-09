@@ -121,10 +121,7 @@ pages:
           term: '2007-2011'
       certificates:
         - name: 'AWS Certified Solutions Architect – Associate'
-          term: 'Issued - 2019, Valid to - 2022'
           link: 'https://www.youracclaim.com/badges/9dbbe109-38da-42c2-9fbe-17de0f9304ab/public_url'
         - name: 'Google Cloud Platform Professional Cloud Architect'
-          term: 'Issued - 2018, Valid to - 2020'
           link: 'https://www.credential.net/0fc6fe03-77f1-4224-82a9-041653064e66'
         - name: 'Cisco CCNA'
-          term: 'Issued - 2013'
