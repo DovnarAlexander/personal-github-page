@@ -4,7 +4,7 @@
 	<div class="row gtr-200">
 		<div class="col-3 col-12-medium">
 			<span class="image">
-				<img src="{{ data.photo }}" alt="" />
+				<img src="{{ data.photo }}" alt="" width="90%" />
 			</span>
 		</div>
 		<div class="col-4 col-12-medium">
@@ -13,7 +13,7 @@
 			<p>{{ p }}</p>
 			{%- endfor %}
 		</div>
-		<div class="col-5 col-12-medium">
+		<div class="col-4 col-12-medium">
 			<h4>Contacts</h4>
 			<ul>
 				{% for li in data.contacts -%}
@@ -28,8 +28,8 @@
 			</ul>
 		</div>
 	</div>
-	<hr class="major" />
 	<h3>Working experience</h3>
+	<hr class="major" />
 	{%- for div in data.experience %}
 	<div class="row">
 		<div class="col-9 col-12-medium">
