@@ -19,6 +19,9 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
           python scripts/cv.py
+        env:
+          PDF_USER: ${{ secrets.PDF_USER }}
+          PDF_TOKEN: ${{ secrets.PDF_TOKEN }}
       - name: changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
