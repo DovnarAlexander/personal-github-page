@@ -1,13 +1,13 @@
 ---
 
-- style: h2
-  text: Who am I?
-- style: p
-  text: Hi there! My name is Alex and live and work in Minsk BY as a Systems Engineer (aka DevOps, aka SRE, aka SysOps).
-- style: p
-  text: This is my personal site I will try to use to share some interesting facts about me.
-- style: delimiter
-- style: h3
-  text: https://en.wikipedia.org/wiki/DevOps
-- style: blockquote
-  text: DevOps is a set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
+- style: 'h2'
+  text: 'Who am I?'
+- style: 'p'
+  text: 'Hi there! My name is Alex and live and work in Minsk BY as a Systems Engineer (aka DevOps, aka SRE, aka SysOps).'
+- style: 'p'
+  text: 'This is my personal site I will try to use to share some interesting facts about me.'
+- style: 'delimiter'
+- style: 'h3'
+  text: 'https://en.wikipedia.org/wiki/DevOps'
+- style: 'blockquote'
+  text: 'DevOps is a set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality.'

@@ -1,10 +1,10 @@
 ---
 
-- name: About me
-  page: index.html
-- name: Curriculum Vitae (CV/Resume)
-  page: cv.html
-# - name: Projects
+- name: 'About me'
+  page: 'index.html'
+- name: 'Curriculum Vitae (CV/Resume)'
+  page: 'cv.html'
+# - name: 'Projects'
 #   pages:
-#     - name: Dummy placeholder
-#       page: project1.html
+#     - name: 'Dummy placeholder'
+#       page: 'project1.html'
