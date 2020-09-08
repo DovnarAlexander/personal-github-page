@@ -1,0 +1,45 @@
+---
+
+name: Release
+on:
+  deployment_status
+
+jobs:
+  release:
+    name: Release creation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run generation script
+        run: |
+          pip install -r scripts/requirements.txt
+          python scripts/cv.py
+      - name: changelog
+        uses: scottbrenner/generate-changelog-action@master
+        id: Changelog
+        env:
+          REPO: ${{ github.repository }}
+      - name: Bump version and push tag
+        id: create_tag
+        uses: anothrNick/github-tag-action@1.17.2
+        env:
+          WITH_V: true
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        with:
+          tag_name: ${{ steps.create_tag.outputs.new_tag }}
+          release_name: Release ${{ steps.create_tag.outputs.new_tag }}
+          body: |
+            ${{ steps.Changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./cv.pdf
+          asset_name: cv.pdf
+          asset_content_type: application/pdf
