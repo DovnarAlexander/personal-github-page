@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
       - name: Run generation script
         run: |
-          sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
-          pip install wheel
           pip install -r scripts/requirements.txt
           python scripts/generate.py
       - uses: EndBug/add-and-commit@v4
