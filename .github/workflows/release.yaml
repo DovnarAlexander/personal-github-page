@@ -2,8 +2,7 @@
 
 name: Release
 on:
-  pull_request:
-    branches: [ master ]
+  deployment_status
 
 jobs:
   release:
