@@ -35,7 +35,6 @@ for page, info in pages.items():
       templateEnv.get_template(info["template"]).render(
         menu=return_data("menu.yaml"),
         social=return_data("social.yaml"),
-        git_commit=os.getenv("GITHUB_SHA", "local"),
         data=return_data(info["data"]) if "data" in info else None
       )
     )
