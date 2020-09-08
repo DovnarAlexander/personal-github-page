@@ -15,7 +15,7 @@ jobs:
       - name: Run generation script
         run: |
           ls -lR
-          pip install -r scripts/requirementss.txt
+          pip install -r scripts/requirements.txt
           python scripts/generate.py
       - uses: EndBug/add-and-commit@v4
         with:
