@@ -2,11 +2,11 @@
 
 photo: 'assets/images/photo.jpg'
 contacts:
-  - text: 'www.linkedin.com/in/aliaksandrdounar'
+  - text: 'LinkedIn (www.linkedin.com/in/aliaksandrdounar)'
     link: 'https://www.linkedin.com/in/aliaksandrdounar'
-  - text: 'www.dovnar-alexander.xyz'
+  - text: 'Alex Dovnar''s personal site (www.dovnar-alexander.xyz)'
     link: 'https://dovnar-alexander.xyz'
-  - text: 'www.github.com/DovnarAlexander'
+  - text: 'Alex Dovnar''s GitHub  (www.github.com/DovnarAlexander)'
     link: 'https://github.com/DovnarAlexander'
 personal_info:
   - 'Highly motivated engineer with good level of experience in modern technologies and approaches in IT world in common and DevOps particular.'
