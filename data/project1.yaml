@@ -1,8 +1,0 @@
----
-
-- style: 'h3'
-  text: 'hello world'
-- style: 'code'
-  text: |
-    echo "hello world"
-    ping tut.by
