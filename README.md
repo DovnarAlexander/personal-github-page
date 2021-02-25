@@ -2,5 +2,4 @@
 TBA
 ## Tools \ materials used
 ### Site template
-Editorial by HTML5 UP
-html5up.net | @ajlkn
+(Dominic - Responsive HTML5 OnePage Template)[https://html.design/download/dominic-personal-template/]
