@@ -1,2 +1,4 @@
 # Ignore vscode
 .vscode/
+# Ignore local scripts
+*.sh
