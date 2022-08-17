@@ -1,4 +1,9 @@
 # Ignore vscode
 .vscode/
+.idea
+.DS_Store
 # Ignore local scripts
 *.sh
+generate.py
+# Virtualenv
+venv
