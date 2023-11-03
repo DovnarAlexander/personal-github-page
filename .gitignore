@@ -3,7 +3,11 @@
 .idea
 .DS_Store
 # Ignore local scripts
+.env
 *.sh
-generate.py
+*.py
+requirements.txt
 # Virtualenv
 venv
+# Temp
+index.html.j2
